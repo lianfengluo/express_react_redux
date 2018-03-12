@@ -21,6 +21,12 @@ app.use(cookieSession({
 
   maxAge:  60 * 60 // 1 hour
 }))
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 // will overwrite the js
 app.use(express.static(path.join(__dirname, 'public')));

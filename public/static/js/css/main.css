@@ -23,7 +23,7 @@ footer {
   width: 100%;
 }
 .container {
-  margin-top: 52px;
+  margin-top: 42px;
   width: 100%;
 }
 .home {
@@ -32,7 +32,7 @@ footer {
 }
 .window1 {
   height: 300px;
-  background-color: black;
+  background-color: white;
   color: white;
   display: -webkit-box;
   display: -webkit-flex;
@@ -55,8 +55,8 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  height: 50px;
-  background-color: white;
+  height: 40px;
+  background-color: black;
   z-index: 1000;
   color: #fff;
   color: rgba(255, 255, 255, 0.8);
@@ -74,7 +74,7 @@ footer {
 }
 .appbar svg {
   text-align: center;
-  font-size: 47px;
+  font-size: 40px;
   color: #C5C5C5;
 }
 .Nav_selected {
@@ -130,23 +130,93 @@ select,
 button {
   -webkit-writing-mode: horizontal-tb;
 }
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: 0;
+}
+.signinBg {
+  background: #d0e4f7;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d0e4f7 0%, #73b1e7 0%, #0a77d5 100%, #8bbae0 100%, #87bcea 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d0e4f7 0%, #73b1e7 0%, #0a77d5 100%, #8bbae0 100%, #87bcea 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d0e4f7 0%, #73b1e7 0%, #0a77d5 100%, #8bbae0 100%, #87bcea 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d0e4f7', endColorstr='#87bcea', GradientType=0);
+  /* IE6-9 */
+}
 .userSignin {
   width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  align-items: center;
   justify-content: center;
   font-family: Open Sans, Arial, sans-serif;
 }
-.userSignin input {
+.userSignin .errorUsername {
+  background: #356aa0;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #356aa0 0%, #356aa0 74%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #356aa0 0%, #356aa0 74%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #356aa0 0%, #356aa0 74%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#356aa0', endColorstr='#356aa0', GradientType=0);
+  /* IE6-9 */
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  align-items: center;
+  display: none;
+  line-height: 45px;
+  height: 45px;
+}
+.userSignin .errorPassword {
+  background: #356aa0;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #356aa0 0%, #356aa0 74%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #356aa0 0%, #356aa0 74%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #356aa0 0%, #356aa0 74%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#356aa0', endColorstr='#356aa0', GradientType=0);
+  /* IE6-9 */
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  align-items: center;
+  display: none;
+  line-height: 45px;
+  height: 45px;
+}
+.userSignin form {
+  padding-top: 28vh;
+}
+.userSignin form center {
+  color: white;
+  font-size: 150%;
+  text-align: center;
+}
+.userSignin form input {
+  transition: background-color 0.1s ease-in-out;
+  border-radius: 10px;
+  border: 4px solid transparent;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
-  width: 100%;
-  margin: 0 auto;
+  width: 320px;
   font-size: 16px;
   border: none;
   padding: 0 10px;
@@ -154,9 +224,34 @@ button {
   line-height: 40px;
   -webkit-transition: opacity 0.1s ease-in-out;
   -o-transition: opacity 0.1s ease-in-out;
-  transition: opacity 0.1s ease-in-out;
-  transition-property: opacity;
-  transition-duration: 0.1s;
-  transition-timing-function: ease-in-out;
-  transition-delay: initial;
+  -webkit-appearance: textfield;
+  background-color: white;
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+}
+.userSignin form button {
+  display: block;
+  margin: 12px 0 20px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 45px;
+  width: 100%;
+  border: none;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+  position: relative;
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  background-color: #1caff6;
+}
+.userSignin form button:not(:disabled),
+.userSignin form input[type=button]:not(:disabled),
+.userSignin form input[type=reset]:not(:disabled),
+.userSignin form input[type=submit]:not(:disabled) {
+  cursor: pointer;
 }

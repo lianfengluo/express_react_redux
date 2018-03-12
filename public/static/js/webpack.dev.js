@@ -12,7 +12,9 @@ var config = {
     output: {
         // __dirname is current working directory
         path: path.resolve(__dirname, '.'),
-        // publicPath: "/assets/",
+        publicPath: "/",
+        // hotUpdateChunkFilename: 'hot/hot-update.js',
+        // hotUpdateMainFilename: 'hot/hot-update.json',
         filename: 'bundle.js',
     },
     module: {
@@ -84,7 +86,8 @@ if (process.env.NODE_ENV === 'production') {
     devtool:'#inline-sourcemap',
     // devtool:'#eval-source-map',
     config.devServer = {
-        // public: true,
+        headers: { "Access-Control-Allow-Origin": "*" },
+        publicPath: "/",
         hot: true,
         inline: true,
         host: "0.0.0.0",
@@ -92,7 +95,7 @@ if (process.env.NODE_ENV === 'production') {
     }
     config.plugins.push(
         new webpack.HotModuleReplacementPlugin()
-    );
+    )
 }
 
 module.exports = config;
